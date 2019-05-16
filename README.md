@@ -1,4 +1,6 @@
 python2.7
 GTK
 
-Change "iconpath" to set btc icon
+Launching for test: python2.7 main.py
+
+Launching for work in background: nohup python2.7 main.py &
