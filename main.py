@@ -1,7 +1,7 @@
 import os, requests
 from gi.repository import Gtk as gtk, AppIndicator3 as appindicator, GLib
 def main():
-  iconpath = "/home/alex90/btc_price_kraken/icon.png"
+  iconpath = os.path.abspath(__file__).replace("main.py","icon.png")
   indicator = appindicator.Indicator.new("customtray", iconpath, appindicator.IndicatorCategory.APPLICATION_STATUS)
   indicator.set_status(appindicator.IndicatorStatus.ACTIVE)
   indicator.set_menu(menu())
