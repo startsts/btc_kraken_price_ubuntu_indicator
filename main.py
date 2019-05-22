@@ -35,7 +35,7 @@ def change_label(ind_app):
       price = float(requests.get("https://api.binance.com/api/v3/ticker/price?symbol=BTCUSDT").json()["price"])
     elif exchange == "bitstamp":
       price = float(requests.get("https://www.bitstamp.net/api/v2/ticker/btcusd").json()["last"])
-    if show_alert and ((price>=float(show_alert) and prev_price<price) or (price<=float(show_alert) and prev_price>price)):
+    if show_alert and ((price>=float(show_alert) and prev_price<show_alert) or (price<=float(show_alert) and prev_price>show_alert)):
       show_notif(price)
       show_alert=0
     prev_price = price
@@ -52,7 +52,7 @@ def set_alert(win):
 def show_notif(price):
   notify.Notification.new("BTC price", str(price), None).show()
 def show_settings(_):
-  global window
+  global window, show_alert
   window = gtk.Window()
   window.set_focus()
   window.set_position(gtk.WindowPosition.CENTER)
@@ -66,7 +66,7 @@ def show_settings(_):
   label.set_justify(gtk.Justification.LEFT)
   vbox.pack_start(label, True, True, 7)
   window.entry = gtk.Entry()
-  window.entry.set_text("0")
+  window.entry.set_text(str(show_alert))
   vbox.pack_start(window.entry, True, True, 7)
   label2 = gtk.Label()
   label2.set_text("Choose exchange")
