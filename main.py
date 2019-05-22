@@ -35,7 +35,7 @@ def change_label(ind_app):
       price = float(requests.get("https://api.binance.com/api/v3/ticker/price?symbol=BTCUSDT").json()["price"])
     elif exchange == "bitstamp":
       price = float(requests.get("https://www.bitstamp.net/api/v2/ticker/btcusd").json()["last"])
-    if show_alert and ((price>float(show_alert) and prev_price<price) or (price<float(show_alert) and prev_price>price)):
+    if show_alert and ((price>=float(show_alert) and prev_price<price) or (price<=float(show_alert) and prev_price>price)):
       show_notif(price)
       show_alert=0
     prev_price = price
