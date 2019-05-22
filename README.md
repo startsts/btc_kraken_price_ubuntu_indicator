@@ -2,7 +2,7 @@ python2.7 GTK3
 
 UPDATE:  now you can choose one of 3 exchanges: "kraken","binance","bitstamp".
 
-You can also enable notification on price reaching some amount, it will be standart Ubuntu's bubble notification.
+You can also enable notification on price reaching some value, it will be standart Ubuntu's bubble notification.
 
 
 
