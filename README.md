@@ -1,4 +1,4 @@
-python2.7 GTK3
+python2.7, GTK3, AppIndicator  (sudo apt-get install gir1.2-appindicator3-0.1)
 
 UPDATE:  now you can choose one of 3 exchanges: "kraken","binance","bitstamp".
 
